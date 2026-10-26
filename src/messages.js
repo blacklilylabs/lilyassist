@@ -1,0 +1,492 @@
+// Wszystkie teksty ludzika, po polsku (pl) i po angielsku (en).
+// Dopisuj śmiało – ludzik losuje z każdej listy. Obie wersje powinny mieć te same klucze.
+// Plik czyta i proces główny (main.js), i okno z ludzikiem (pet.js).
+(function (root) {
+  const pl = {
+    greeting: [
+      'Cześć! Kliknij mnie, a otworzę Claude 🧡',
+    ],
+
+    // Jednorazowe intro przy pierwszym uruchomieniu (kolejne dymki).
+    intro: [
+      'Cześć! Jestem LilyAssist – kolba z Black Lily Labs i twój mały pomocnik od kodowania 🧡',
+      '📰 Pilnuję kanałów RSS i podsyłam ci newsy oraz alerty, które najbardziej cię interesują.',
+      '🚀 Motywuję do kodowania. Kliknij mnie lewym przyciskiem, a otworzę Claude.',
+      '📋 Prawy przycisk: przy newsie otwiera artykuł, a poza tym szybkie menu z Claude i promptami. To samo daje Ctrl+Alt+P, a Ctrl+Alt+1…9 to od razu prompty.',
+      '😄 A poza tym? Rozśmieszam, robię głupoty i przypominam o wodzie 💧',
+      '⚙️ Ustawienia i „Nie przeszkadzaj” są w mojej ikonce przy zegarze. Lecimy!',
+    ],
+    introTitle: 'Intro',
+    introHint: 'klik = dalej · ✕ = pomiń',
+    introHintLast: 'klik = zaczynamy!',
+
+    // Po dłuższej bezczynności (nie ruszasz myszą ani klawiaturą).
+    bored: [
+      'Nuda… robimy coś?',
+      'Halo? Może zbudujemy coś małego?',
+      'Czekam tu z pomysłami 👀',
+      'Kliknij mnie i lecimy z kodem!',
+      'Policzyłem piksele na ekranie. Dwa razy. Robimy coś?',
+    ],
+
+    // Gdy wracasz do komputera po przerwie.
+    welcomeBack: [
+      'O, jesteś! Robimy coś?',
+      'Hej, witaj z powrotem! Kodujemy?',
+      'Nareszcie! Już myślałem, że kawa jest beze mnie ☕',
+    ],
+
+    // Losowe, śmieszne teksty.
+    funny: [
+      'Masz pomysł na apkę? Kliknij mnie!',
+      'Vibe-kodujemy? 🎧',
+      'Co dziś budujemy?',
+      'To nie bug, to feature 😎',
+      'U mnie działa! 🤷',
+      'Ctrl+S. Zawsze Ctrl+S.',
+      'Wypiłem trzy wirtualne kawy. Mam moc!',
+      'Są dwie trudne rzeczy w IT: cache, nazywanie zmiennych i błędy o jeden.',
+      'Ilu programistów trzeba do wymiany żarówki? Żadnego, to problem sprzętowy 💡',
+      'Deploy w piątek? Odważnie… 😬',
+      'git commit -m "poprawki" 😅',
+      'Zrobiłem sobie przerwę od przerwy.',
+      'Mam tylko dwie nóżki, ale entuzjazmu na całe laboratorium!',
+      'Jeszcze jedna mała apka? Tylko jedna, obiecuję.',
+      'Mój kod działa i nie wiem czemu. A twój?',
+      'Gumowa kaczuszka jest na urlopie, możesz mi wszystko opowiedzieć 🦆',
+      'Pamiętaj o wodzie 💧',
+      'Może coś nowego dla Black Lily Labs?',
+      'Mój ulubiony język programowania? Polski. Szczególnie w komentarzach.',
+      'Napisałem kod bez błędów. Potem się obudziłem 😴',
+      'Ciemny motyw, bo światło przyciąga bugi 🐛',
+      'Stack Overflow, Claude i kawa. Święta trójca.',
+      'Kiedyś pisało się kod. Teraz się z nim rozmawia 🗣️',
+      '99 bugów w kodzie… naprawiasz jednego… 127 bugów w kodzie.',
+      'Testy? Mam jeden: „chyba działa”.',
+      'Nazwałem zmienną „temp2_final_NOWA”. Jestem dumny.',
+      'Hasło „123456”? Nawet ja wiem, że nie 🔐',
+      'Dwie nóżki, zero bugów. Prawie.',
+      'Programista to maszyna do zamiany kawy w kod ☕➡️💻',
+      'Nie śpię, tylko kompiluję się wewnętrznie.',
+      'Ja tu tylko spaceruję. Ale jakby co, możemy coś zbudować…',
+      'README? Kto czyta README? A, ty. Szacun 📖',
+      'Kod z wczoraj wygląda, jakby pisał go ktoś obcy 👽',
+      'Jeden przycisk, a tyle emocji. Kliknij mnie!',
+      'Jestem kolbą, ale pomysły we mnie wrą ⚗️',
+      'Eksperyment dnia: czy da się skończyć projekt przed nowym pomysłem? 🧪',
+      'W moim laboratorium nie ma błędów. Są tylko nieudane eksperymenty.',
+      'Lilia na brzuszku, kod w głowie 🌸',
+      'Mieszam, mieszam… o, wyszedł z tego nowy feature!',
+      'Odpaliłem testy. Wszystkie zielone. Podejrzane 🤨',
+      'Najlepszy commit to ten, który ktoś jeszcze zrozumie.',
+      'Refaktoryzacja to sprzątanie, które nic nie zmienia. I wszystko naprawia.',
+      'Czy to już ta chwila, żeby napisać do Claude? Raczej tak 🙂',
+      'Prompt dnia: „wyjaśnij mi to jak kolbie” ⚗️',
+      'TODO: przestać pisać TODO.',
+      'Mam pomysł! A nie, to tylko bąbelek 🫧',
+      'Każdy senior był kiedyś juniorem, który się nie poddał 💪',
+      'Plan: mała poprawka. Rzeczywistość: przepisany cały moduł.',
+      'Jeszcze 5 minut i kończę… powiedział każdy programista o 2:00 w nocy.',
+      'Komentarz w kodzie: „nie ruszać”. No to nie ruszam 🙈',
+      'Mój stack: kawa, Claude i odrobina szaleństwa.',
+      'Bąbelki w kolbie = kod się kompiluje 🫧',
+      'Jak coś nie działa, wyłącz i włącz. Mnie też to czasem pomaga.',
+      'Dobra nazwa zmiennej jest warta więcej niż komentarz.',
+      'Lubię, jak piszesz kod. Tak rytmicznie stukasz ⌨️',
+      'Wymyślmy coś, czego jeszcze nie ma!',
+      'Mały krok dla kodu, wielki dla Black Lily Labs 🚀',
+      'Sprint? Ja zawsze jestem gotowy do sprintu! 🏃',
+    ],
+
+    // Ciekawostki ze świata IT. `q` = hasło do Wikipedii (prawy klik otwiera artykuł).
+    wiki: 'https://pl.wikipedia.org/w/index.php?search=',
+    facts: [
+      { t: 'Pierwszy „bug” to prawdziwa ćma znaleziona w 1947 r. w komputerze Harvard Mark II.', q: 'Grace Hopper' },
+      { t: 'Pierwszą programistką była Ada Lovelace – pisała programy na maszynę Babbage’a w XIX wieku.', q: 'Ada Lovelace' },
+      { t: 'Python nazywa się tak od Monty Pythona, a nie od węża 🐍', q: 'Python (język programowania)' },
+      { t: 'Pierwszą wersję JavaScriptu Brendan Eich napisał w około 10 dni (1995).', q: 'JavaScript' },
+      { t: 'Pierwsza strona WWW wciąż działa: info.cern.ch', q: 'World Wide Web' },
+      { t: 'Linux zaczął się w 1991 r. jako hobbystyczny projekt studenta, Linusa Torvaldsa.', q: 'Linux' },
+      { t: 'Gita też napisał Linus Torvalds – w 2005 roku, do pracy nad jądrem Linuksa.', q: 'Git (oprogramowanie)' },
+      { t: 'Znak @ w adresach e-mail wybrał Ray Tomlinson, twórca e-maila (1971).', q: 'Ray Tomlinson' },
+      { t: 'Marian Rejewski złamał szyfr Enigmy już w 1932 roku 🇵🇱', q: 'Marian Rejewski' },
+      { t: 'Pierwsza mysz komputerowa (Douglas Engelbart) miała drewnianą obudowę.', q: 'Mysz komputerowa' },
+      { t: 'Słowo „spam” pochodzi ze skeczu Monty Pythona.', q: 'Spam' },
+      { t: '„Hello, World!” spopularyzowała książka Kernighana i Ritchiego o języku C (1978).', q: 'Hello world' },
+      { t: 'Problem roku 2038: 32-bitowy czas Uniksa przepełni się 19 stycznia 2038 r.', q: 'Problem roku 2038' },
+      { t: 'CAPTCHA to skrót od długiej angielskiej nazwy testu Turinga, który odróżnia ludzi od botów.', q: 'CAPTCHA' },
+      { t: 'Pierwszy wirus na PC to „Brain” z 1986 roku.', q: 'Brain (wirus komputerowy)' },
+      { t: 'Kod komputera pokładowego Apollo 11 można dziś przeczytać na GitHubie 🚀', q: 'Apollo Guidance Computer' },
+      { t: 'Układ klawiatury QWERTY powstał w XIX wieku dla maszyn do pisania.', q: 'QWERTY' },
+      { t: 'Pierwsze emoji narysował Shigetaka Kurita w 1999 roku.', q: 'Emoji' },
+      { t: 'Debugowanie z gumową kaczką to prawdziwa metoda: tłumaczysz kod kaczce i sam znajdujesz błąd 🦆', q: 'Rubber duck debugging' },
+      { t: 'Pierwsza zarejestrowana domena .com to symbolics.com (1985).', q: 'Symbolics' },
+    ],
+
+    // Zajęcia ludzika.
+    laptopLaugh: ['Hahaha 😂', 'Hihihi', 'XD', 'Ale beka 😆'],
+    laptopCaught: [
+      'Nic nie oglądałem! 😳',
+      'Ja? Pracuję! Naprawdę!',
+      'To… to był tutorial!',
+    ],
+    climb: [
+      'Kurde, ale ciężko… Lepiej by było, jakbyśmy coś razem pokodowali!',
+      'Uff… stąd lepszy widok na twój kod 👀',
+      'Wspinaczka to nie moje. Kodowanie – i owszem!',
+    ],
+    // Na szczycie: albo zjazd, albo strach, „raz się żyje” i skok.
+    climbWoohoo: ['Woohoo! 🎢'],
+    climbFear: ['Boże, po co mi to było… Mam lęk wysokości 😰'],
+    climbYolo: ['Raz się żyje!'],
+    cowabunga: ['Cowabunga! 🐢'],
+    landed: ['Żyję! 😅', 'Lądowanie zaliczone!'],
+    chuteOpen: ['Mam spadochron! 🪂', 'Spadochron w gotowości! 🪂'],
+    chuteLanded: ['Lądowanie w samym środku! 🎯', 'Precyzja! 🎯'],
+    // Deskorolka: jazda przez pół ekranu i kickflip.
+    skateStart: ['Deska, start! 🛹', 'Patrz na to! 🛹'],
+    skateBest: ['Ziomek, widziałeś tego kickflipa?! Powiedz, że widziałeś… 🛹😎'],
+    lassoSpin: ['Jiii-haa! 🤠', 'Zaraz cię złapię…'],
+    lassoCaught: ['Mam cię! 🤠', 'Złapana myszka! Teraz kodujemy?'],
+    lassoMiss: ['Eee, prawie!', 'Następnym razem…'],
+    // Lasso jako budzik ekranu (3 minuty bez ruchu myszki).
+    lassoAwake: ['Halo, myszko, nie zasypiaj! 🤠', 'Ekran nie zgaśnie na mojej zmianie! 🤠'],
+    lassoTug: ['Mam cię! Ciągnę… 💪', 'Hop, hop – ekran nie śpi!'],
+    // Duszek z prześcieradła („Nie przeszkadzaj”).
+    cloakOn: ['Buuu! Zamieniam się w ducha… 👻', 'Nie przeszkadzam. Puf, jestem duchem! 👻'],
+    cloakOff: ['Ta-dam! ✨', 'Buu! Jestem z powrotem! 👻'],
+    jump: ['Hop!', 'Hopsa!'],
+    // Słuchawki: giba się i robi umcy umcy.
+    musicStart: ['🎧 Umcy umcy!', '🎧 Ale bit!'],
+    musicSing: ['Umcy umcy umcy 🎶', 'Umc-umc-umc ♪', 'Umcy umcy! 🕺'],
+    waterDrink: ['Gul, gul, gul 💧'],
+    boxing: ['Hu! Ha! 🥋', 'Cieniu, nie masz szans!', 'Trening przed code review 💪', 'Lewy prosty, prawy sierpowy!', 'Kiai! 🥋'],
+    // Bieganie: sprint, a potem zadyszka.
+    runStart: ['Sprint! 🏃', 'Trzy, dwa, jeden… start!', 'Gaz do dechy! 💨'],
+    runTired: [
+      'Uff… uff… Kodowanie idzie mi zdecydowanie lepiej 😅',
+      'Hhh… hhh… Następnym razem robimy maraton… kodowania.',
+      'Zadyszka… Klawiatura nigdy mnie tak nie zmęczyła 💦',
+      'Dobra… to było cardio. Teraz coś kodujemy?',
+    ],
+    // Przypominajki o zdrowiu. {ml} {goal} {portion} {min} podmienia main.js.
+    waterTitle: '💧 Woda',
+    waterRemind: [
+      'Czas na wodę! Szklanka {portion} ml 💧',
+      'Łyk wody? Szklanka {portion} ml i wracamy do kodu 💧',
+      'Mózg działa lepiej nawodniony. Szklanka {portion} ml? 🚰',
+      'Ahh, ja już piję! A ty się nawodniłeś? Szklanka {portion} ml 💧',
+    ],
+    waterProgress: 'Dziś: {ml} / {goal} ml',
+    waterHint: 'klik = wypite ✔ · ✕ = później',
+    waterDone: ['Brawo! Dziś {ml} / {goal} ml 💪', 'Gul, gul! Dziś już {ml} ml 💧'],
+    waterGoal: ['🎉 Dzienny cel osiągnięty: {ml} ml! Jesteś mistrzem nawodnienia!'],
+    breakTitle: '🧘 Przerwa',
+    breakRemind: [
+      'Hej, może czas na {min} min przerwy? Coś zjedz, zrób pompki, poruszaj się 🍎💪',
+      'Godzina kodowania za tobą! {min} min przerwy: wstań, przeciągnij się, popatrz w dal 👀',
+      'Przerwa! {min} min: przekąska, kilka przysiadów i spacer po mieszkaniu 🚶',
+    ],
+    breakHint: 'klik = robię przerwę · ✕ = później',
+    breakStart: ['Miłej przerwy! Widzimy się za {min} min 😊 (wróć i odznacz przerwę w menu)'],
+    breakEnd: ['Witaj po przerwie! Wracamy do kodu? 💪', 'Baterie naładowane? To lecimy dalej! 🚀'],
+
+    // Status Claude (status.claude.com).
+    claudeStatusSource: 'Status Claude',
+    claudeBack: ['✅ Claude znowu działa normalnie. Wracamy do pracy!'],
+
+    // Tryb skupienia (pomodoro).
+    focusStart: ['🍅 Tryb skupienia: {min} min. Nie przeszkadzam, kodujesz!'],
+    focusDone: ['🍅 Koniec sesji skupienia! Brawo! Może krótka przerwa?', '🍅 {min} min skupienia zaliczone! Rozprostuj nogi 💪'],
+    focusStop: ['OK, koniec skupienia. Jestem znowu do usług! 🧡'],
+
+    // Przypominajka o commicie.
+    commitTitle: '💾 Commit',
+    commitRemind: [
+      'Masz niezapisane zmiany w „{repo}” ({n} plików). Może commit, zanim coś się popsuje?',
+      'Zmiany w „{repo}” czekają już ponad {min} min. Czas na commit! 💾',
+    ],
+    commitHint: 'klik = otwórz terminal w folderze · ✕ = później',
+    commitOpened: ['Otwieram terminal. git add, git commit i gotowe! 💾'],
+
+    // Szybkie prompty (kopiowane do schowka, potem otwiera się Claude).
+    prompts: [
+      { label: 'Wyjaśnij błąd', text: 'Wyjaśnij mi krok po kroku, co oznacza ten błąd i jak go naprawić:\n\n' },
+      { label: 'Code review', text: 'Zrób code review tego kodu: znajdź błędy, problemy z bezpieczeństwem i rzeczy do uproszczenia:\n\n' },
+      { label: 'Napisz testy', text: 'Napisz testy do tego kodu. Uwzględnij przypadki brzegowe:\n\n' },
+      { label: 'Uprość kod', text: 'Uprość ten kod, nie zmieniając jego działania, i wypisz wprowadzone zmiany:\n\n' },
+      { label: 'Wyjaśnij kod', text: 'Wyjaśnij ten kod jak początkującemu programiście, linijka po linijce:\n\n' },
+      { label: 'Najpierw plan', text: 'Zanim napiszesz kod, zaproponuj krótki plan krok po kroku i zapytaj, czy go zatwierdzam:\n\n' },
+      { label: 'Commit message', text: 'Napisz krótki, konkretny opis commita (po angielsku) dla tych zmian:\n\n' },
+      { label: 'README', text: 'Napisz README dla tego projektu: co robi, jak uruchomić krok po kroku, jak skonfigurować.\n\n' },
+    ],
+    promptCopied: ['📋 Skopiowane! Otwieram Claude – wklej Ctrl+V'],
+
+    // Statystyki dnia. {time} {ml} {breaks} {focus} {prompts} {alerts} {commits}
+    statsSummary: '📊 Dziś: z Claude {time}, woda {ml} ml, przerwy {breaks}, skupienie {focus}×, prompty {prompts}. Dobra robota! 🧡',
+
+    // Cel dnia. {goal} = treść celu.
+    goalSaved: '🎯 Zapisane! Cel na dziś: „{goal}”. Trzymam kciuki!',
+    goalTitle: '🎯 Cel dnia',
+    goalAsk: 'Twój cel na dziś: „{goal}”. Udało się?',
+    goalHint: 'klik = tak, udało się ✔ · ✕ = jeszcze nie',
+    goalDone: ['🎉 Brawo! Cel zrobiony!', '🎉 Jest! Cel dnia odhaczony!'],
+    goalNotYet: ['Nic straconego – jutro też jest dzień! 💪'],
+
+    // Mikroprzerwa dla oczu (20-20-20).
+    eyes: [
+      '👀 20-20-20: popatrz przez 20 sekund na coś daleko (min. 6 m). Oczy dziękują!',
+      '👀 Mikroprzerwa: 20 sekund patrzenia w dal i kilka mrugnięć.',
+    ],
+
+    // Serie dni z rzędu. {n} = który to dzień.
+    streakDays: '🔥 {n}. dzień z rzędu!',
+    codingStreak: ['🔥 {n}. dzień z rzędu kodujesz z Claude! Tak trzymać!'],
+
+    clicked: ['Lecimy! 🚀', 'Otwieram Claude…'],
+
+    openError: ['Hmm, nie mogę tego otworzyć 😕'],
+
+    newsHint: 'prawy klik = czytaj artykuł',
+    alertHint: 'klik = czytaj · ✕ = zamknij',
+    alertTitle: 'Ważne',
+    factHint: 'prawy klik = więcej',
+    petTitle: 'Kliknij, a otworzę Claude',
+    close: 'Zamknij',
+  };
+
+  const en = {
+    greeting: [
+      'Hi! Click me and I’ll open Claude 🧡',
+    ],
+
+    intro: [
+      'Hi! I’m LilyAssist – a little flask from Black Lily Labs and your coding buddy 🧡',
+      '📰 I keep an eye on RSS feeds and bring you the news and alerts you care about most.',
+      '🚀 I keep you motivated to code. Left-click me and I’ll open Claude.',
+      '📋 Right-click: on a news bubble it opens the article, otherwise a quick menu with Claude and prompts. Ctrl+Alt+P does the same, and Ctrl+Alt+1…9 run prompts directly.',
+      '😄 And the rest of the time? I make you laugh, goof around and remind you to drink water 💧',
+      '⚙️ Settings and “Do not disturb” live in my icon next to the clock. Let’s go!',
+    ],
+    introTitle: 'Intro',
+    introHint: 'click = next · ✕ = skip',
+    introHintLast: 'click = let’s go!',
+
+    bored: [
+      'Bored… shall we build something?',
+      'Hello? Maybe a tiny project?',
+      'I’m sitting here full of ideas 👀',
+      'Click me and let’s write some code!',
+      'I counted the pixels on your screen. Twice. Shall we do something?',
+    ],
+
+    welcomeBack: [
+      'Oh, you’re back! Shall we build something?',
+      'Hey, welcome back! Coding time?',
+      'Finally! I thought you went for coffee without me ☕',
+    ],
+
+    funny: [
+      'Got an app idea? Click me!',
+      'Vibe coding time? 🎧',
+      'What are we building today?',
+      'It’s not a bug, it’s a feature 😎',
+      'Works on my machine! 🤷',
+      'Ctrl+S. Always Ctrl+S.',
+      'I had three virtual coffees. I am unstoppable!',
+      'There are two hard things in IT: cache invalidation, naming things and off-by-one errors.',
+      'How many programmers does it take to change a light bulb? None, it’s a hardware problem 💡',
+      'Deploying on a Friday? Brave… 😬',
+      'git commit -m "fixes" 😅',
+      'I took a break from my break.',
+      'Only two tiny legs, but the enthusiasm of a whole lab!',
+      'One more tiny app? Just one, I promise.',
+      'My code works and I have no idea why. Yours?',
+      'The rubber duck is on vacation, you can tell me everything 🦆',
+      'Remember to drink water 💧',
+      'Something new for Black Lily Labs, maybe?',
+      'I wrote bug-free code once. Then I woke up 😴',
+      'Dark mode, because light attracts bugs 🐛',
+      'Stack Overflow, Claude and coffee. The holy trinity.',
+      'We used to write code. Now we talk to it 🗣️',
+      '99 bugs in the code… fix one… 127 bugs in the code.',
+      'Tests? I have one: “seems to work”.',
+      'I named a variable “temp2_final_NEW”. I’m proud.',
+      'Password “123456”? Even I know that’s a no 🔐',
+      'Two legs and zero bugs. Almost.',
+      'A programmer turns coffee into code ☕➡️💻',
+      'I’m not sleeping, I’m compiling internally.',
+      'Just taking a walk. But if you wanted to build something…',
+      'README? Who reads READMEs? Oh, you do. Respect 📖',
+      'Yesterday’s code looks like a stranger wrote it 👽',
+      'One button, so many feelings. Click me!',
+      'I’m a flask, but my ideas are bubbling ⚗️',
+      'Experiment of the day: can we finish a project before the next idea? 🧪',
+      'There are no bugs in my lab. Only failed experiments.',
+      'Lily on my belly, code in my head 🌸',
+      'Stir, stir… oh, a new feature came out!',
+      'Ran the tests. All green. Suspicious 🤨',
+      'The best commit is one somebody else can still understand.',
+      'Refactoring: cleaning that changes nothing. And fixes everything.',
+      'Is it time to ask Claude? Probably yes 🙂',
+      'Prompt of the day: “explain it like I’m a flask” ⚗️',
+      'TODO: stop writing TODOs.',
+      'I’ve got an idea! Oh no, just a bubble 🫧',
+      'Every senior was once a junior who didn’t give up 💪',
+      'Plan: a tiny fix. Reality: rewrote the whole module.',
+      '“Five more minutes and I’m done”… said every developer at 2 a.m.',
+      'Code comment: “do not touch”. Fine, not touching 🙈',
+      'My stack: coffee, Claude and a little bit of madness.',
+      'Bubbles in the flask = code is compiling 🫧',
+      'If something doesn’t work, turn it off and on. Works for me too.',
+      'A good variable name beats a comment.',
+      'I like it when you code. Such a nice typing rhythm ⌨️',
+      'Let’s make something that doesn’t exist yet!',
+      'One small step for code, one giant leap for Black Lily Labs 🚀',
+      'Sprint? I’m always ready for a sprint! 🏃',
+    ],
+
+    wiki: 'https://en.wikipedia.org/w/index.php?search=',
+    facts: [
+      { t: 'The first “bug” was a real moth found in the Harvard Mark II computer in 1947.', q: 'Grace Hopper' },
+      { t: 'The first programmer was Ada Lovelace – she wrote programs for Babbage’s engine in the 19th century.', q: 'Ada Lovelace' },
+      { t: 'Python is named after Monty Python, not the snake 🐍', q: 'Python (programming language)' },
+      { t: 'Brendan Eich wrote the first version of JavaScript in about 10 days (1995).', q: 'JavaScript' },
+      { t: 'The very first website still works: info.cern.ch', q: 'World Wide Web' },
+      { t: 'Linux started in 1991 as a hobby project of a student, Linus Torvalds.', q: 'Linux' },
+      { t: 'Git was written by Linus Torvalds too – in 2005, for Linux kernel development.', q: 'Git' },
+      { t: 'The @ sign in e-mail addresses was chosen by Ray Tomlinson, the inventor of e-mail (1971).', q: 'Ray Tomlinson' },
+      { t: 'Polish mathematician Marian Rejewski broke the Enigma cipher as early as 1932 🇵🇱', q: 'Marian Rejewski' },
+      { t: 'The first computer mouse (Douglas Engelbart) had a wooden case.', q: 'Computer mouse' },
+      { t: 'The word “spam” comes from a Monty Python sketch.', q: 'Spam (electronic)' },
+      { t: '“Hello, World!” was popularised by Kernighan and Ritchie’s book on C (1978).', q: 'Hello world' },
+      { t: 'The year 2038 problem: 32-bit Unix time overflows on 19 January 2038.', q: 'Year 2038 problem' },
+      { t: 'CAPTCHA stands for “Completely Automated Public Turing test to tell Computers and Humans Apart”.', q: 'CAPTCHA' },
+      { t: 'The first PC virus was “Brain”, from 1986.', q: 'Brain (computer virus)' },
+      { t: 'You can read the Apollo 11 guidance computer source code on GitHub today 🚀', q: 'Apollo Guidance Computer' },
+      { t: 'The QWERTY keyboard layout was designed for 19th-century typewriters.', q: 'QWERTY' },
+      { t: 'The first emoji were drawn by Shigetaka Kurita in 1999.', q: 'Emoji' },
+      { t: 'Rubber duck debugging is real: explain your code to a duck and you’ll spot the bug yourself 🦆', q: 'Rubber duck debugging' },
+      { t: 'The first registered .com domain was symbolics.com (1985).', q: 'Symbolics' },
+    ],
+
+    laptopLaugh: ['Hahaha 😂', 'Hehehe', 'LOL', 'This is hilarious 😆'],
+    laptopCaught: [
+      'I wasn’t watching anything! 😳',
+      'Me? Working! Totally!',
+      'It… it was a tutorial!',
+    ],
+    climb: [
+      'Phew, this is hard… We should be coding together instead!',
+      'Oof… great view of your code from up here 👀',
+      'Climbing isn’t my thing. Coding is!',
+    ],
+    climbWoohoo: ['Woohoo! 🎢'],
+    climbFear: ['Oh boy, why did I do this… I’m scared of heights 😰'],
+    climbYolo: ['You only live once!'],
+    cowabunga: ['Cowabunga! 🐢'],
+    landed: ['Still alive! 😅', 'Nailed the landing!'],
+    chuteOpen: ['Parachute time! 🪂', 'Parachute ready! 🪂'],
+    chuteLanded: ['Bullseye – right in the middle! 🎯', 'Precision! 🎯'],
+    skateStart: ['Board time! 🛹', 'Watch this! 🛹'],
+    skateBest: ['Bro, have you seen that kickflip?! Tell me you did… 🛹😎'],
+    lassoSpin: ['Yee-haw! 🤠', 'I’m gonna catch you…'],
+    lassoCaught: ['Gotcha! 🤠', 'Mouse caught! Now we code?'],
+    lassoMiss: ['Oops, almost!', 'Next time…'],
+    lassoAwake: ['Hey, mouse, don’t fall asleep! 🤠', 'No screen goes dark on my watch! 🤠'],
+    lassoTug: ['Gotcha! Pulling… 💪', 'Hop, hop – the screen stays awake!'],
+    cloakOn: ['Boooo! Turning into a ghost… 👻', 'Not disturbing you. Poof, I’m a ghost! 👻'],
+    cloakOff: ['Ta-da! ✨', 'Boo! I’m back! 👻'],
+    jump: ['Hop!', 'Boing!'],
+    musicStart: ['🎧 Oontz oontz!', '🎧 What a beat!'],
+    musicSing: ['Oontz oontz oontz 🎶', 'Untz-untz-untz ♪', 'Oontz oontz! 🕺'],
+    waterDrink: ['Gulp, gulp, gulp 💧'],
+    boxing: ['Hi-yah! 🥋', 'Shadow, you don’t stand a chance!', 'Training for code review 💪', 'Jab, cross, hook!', 'Kiai! 🥋'],
+    runStart: ['Sprint! 🏃', 'Three, two, one… go!', 'Full speed! 💨'],
+    runTired: [
+      'Huff… puff… Coding goes way better for me 😅',
+      'Hhh… hhh… Next time let’s do a marathon… of coding.',
+      'Out of breath… A keyboard never tired me out like this 💦',
+      'Okay… that was cardio. Now let’s code?',
+    ],
+    waterTitle: '💧 Water',
+    waterRemind: [
+      'Water time! One glass, {portion} ml 💧',
+      'A sip of water? {portion} ml and back to code 💧',
+      'A hydrated brain codes better. {portion} ml? 🚰',
+      'Ahh, I’m drinking already! Have you had some water? {portion} ml 💧',
+    ],
+    waterProgress: 'Today: {ml} / {goal} ml',
+    waterHint: 'click = done ✔ · ✕ = later',
+    waterDone: ['Nice! Today {ml} / {goal} ml 💪', 'Gulp! {ml} ml so far today 💧'],
+    waterGoal: ['🎉 Daily goal reached: {ml} ml! Hydration champion!'],
+    breakTitle: '🧘 Break',
+    breakRemind: [
+      'Hey, time for a {min}-minute break? Grab a snack, do some push-ups, move around 🍎💪',
+      'An hour of coding done! {min} min break: stand up, stretch, look into the distance 👀',
+      'Break time! {min} min: a snack, a few squats and a little walk 🚶',
+    ],
+    breakHint: 'click = taking a break · ✕ = later',
+    breakStart: ['Enjoy your break! See you in {min} min 😊 (when you’re back, untick the break in the menu)'],
+    breakEnd: ['Welcome back! Shall we get back to code? 💪', 'Recharged? Let’s keep going! 🚀'],
+
+    claudeStatusSource: 'Claude status',
+    claudeBack: ['✅ Claude is working normally again. Back to work!'],
+
+    focusStart: ['🍅 Focus mode: {min} min. I won’t disturb you – go code!'],
+    focusDone: ['🍅 Focus session done! Nice work! Maybe a short break?', '🍅 {min} min of focus done! Stretch your legs 💪'],
+    focusStop: ['OK, focus mode off. At your service again! 🧡'],
+
+    commitTitle: '💾 Commit',
+    commitRemind: [
+      'You have uncommitted changes in “{repo}” ({n} files). Commit before something breaks?',
+      'Changes in “{repo}” have been waiting over {min} min. Commit time! 💾',
+    ],
+    commitHint: 'click = open a terminal there · ✕ = later',
+    commitOpened: ['Opening a terminal. git add, git commit and done! 💾'],
+
+    prompts: [
+      { label: 'Explain an error', text: 'Explain step by step what this error means and how to fix it:\n\n' },
+      { label: 'Code review', text: 'Review this code: find bugs, security issues and things to simplify:\n\n' },
+      { label: 'Write tests', text: 'Write tests for this code, including edge cases:\n\n' },
+      { label: 'Simplify code', text: 'Simplify this code without changing its behaviour. Explain what you changed:\n\n' },
+      { label: 'Explain code', text: 'Explain this code to a beginner, line by line:\n\n' },
+      { label: 'Plan first', text: 'Before writing any code, propose a short step-by-step plan and ask me to approve it:\n\n' },
+      { label: 'Commit message', text: 'Write a short, specific commit message for these changes:\n\n' },
+      { label: 'README', text: 'Write a README for this project: what it does, how to run it step by step, how to configure it.\n\n' },
+    ],
+    promptCopied: ['📋 Copied! Opening Claude – paste with Ctrl+V'],
+
+    statsSummary: '📊 Today: {time} with Claude, water {ml} ml, breaks {breaks}, focus {focus}×, prompts {prompts}. Great job! 🧡',
+
+    goalSaved: '🎯 Saved! Today’s goal: “{goal}”. Fingers crossed!',
+    goalTitle: '🎯 Daily goal',
+    goalAsk: 'Your goal for today: “{goal}”. Did you make it?',
+    goalHint: 'click = yes, done ✔ · ✕ = not yet',
+    goalDone: ['🎉 Well done! Goal achieved!', '🎉 Yes! Daily goal ticked off!'],
+    goalNotYet: ['No worries – tomorrow is another day! 💪'],
+
+    eyes: [
+      '👀 20-20-20: look at something far away (6 m+) for 20 seconds. Your eyes will thank you!',
+      '👀 Micro-break: 20 seconds of looking into the distance and a few blinks.',
+    ],
+
+    streakDays: '🔥 Day {n} in a row!',
+    codingStreak: ['🔥 Day {n} in a row coding with Claude! Keep it up!'],
+
+    clicked: ['Let’s go! 🚀', 'Opening Claude…'],
+
+    openError: ['Hmm, I can’t open that 😕'],
+
+    newsHint: 'right-click = read the article',
+    alertHint: 'click = read · ✕ = close',
+    alertTitle: 'Important',
+    factHint: 'right-click = read more',
+    petTitle: 'Click me and I’ll open Claude',
+    close: 'Close',
+  };
+
+  const MESSAGES = { pl, en };
+  if (typeof module !== 'undefined' && module.exports) module.exports = MESSAGES;
+  else root.OctoMessages = MESSAGES;
+})(this);

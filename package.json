@@ -1,0 +1,53 @@
+{
+  "name": "lilyassist",
+  "productName": "LilyAssist",
+  "version": "0.6.0",
+  "description": "LilyAssist – desktopowy pupil dla osób pracujących z Claude (Black Lily Labs). Niezależny projekt, niezwiązany z Anthropic.",
+  "main": "src/main.js",
+  "private": true,
+  "author": "Black Lily Labs",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "demo": "electron . --fast",
+    "icon": "electron scripts/make-icon.js",
+    "dist": "electron scripts/make-icon.js && electron-builder --win nsis"
+  },
+  "build": {
+    "appId": "com.blacklilylabs.lilyassist",
+    "productName": "LilyAssist",
+    "copyright": "Copyright (c) 2026 Black Lily Labs – licencja MIT",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "src/**/*",
+      "package.json",
+      "LICENSE"
+    ],
+    "asarUnpack": [
+      "node_modules/@koromix/**/*.node"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "LilyAssist",
+      "artifactName": "LilyAssist-Setup-${version}.exe"
+    }
+  },
+  "devDependencies": {
+    "electron": "^45.0.0",
+    "electron-builder": "^26.18.0"
+  },
+  "dependencies": {
+    "koffi": "^3.3.4"
+  }
+}

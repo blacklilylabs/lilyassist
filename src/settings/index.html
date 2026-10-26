@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'">
+  <title>LilyAssist</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Teksty z atrybutem data-i18n wstawia settings.js w wybranym języku. -->
+  <header>
+    <h1>LilyAssist</h1>
+    <p class="muted" data-i18n="subtitle"></p>
+  </header>
+
+  <section>
+    <h2 data-i18n="langTitle"></h2>
+    <select id="lang">
+      <option value="pl">Polski</option>
+      <option value="en">English</option>
+    </select>
+  </section>
+
+  <section>
+    <h2 data-i18n="modeTitle"></h2>
+    <label class="row">
+      <input type="checkbox" id="dnd">
+      <span>
+        <strong data-i18n="dnd"></strong>
+        <small data-i18n="dndInfo"></small>
+      </span>
+    </label>
+    <label class="row">
+      <input type="checkbox" id="alerts">
+      <span>
+        <strong data-i18n="alerts"></strong>
+        <small data-i18n="alertsInfo"></small>
+      </span>
+    </label>
+    <label class="row">
+      <input type="checkbox" id="keepAwake">
+      <span>
+        <strong data-i18n="keepAwake"></strong>
+        <small data-i18n="keepAwakeInfo"></small>
+      </span>
+    </label>
+  </section>
+
+  <section>
+    <h2 data-i18n="healthTitle"></h2>
+    <label class="row">
+      <input type="checkbox" id="water">
+      <span>
+        <strong data-i18n="water"></strong>
+        <small id="water-info"></small>
+      </span>
+    </label>
+    <div class="numbers">
+      <label><span data-i18n="waterGoal"></span> <input type="number" id="waterGoalMl" min="500" max="5000" step="100"> ml</label>
+      <label><span data-i18n="waterPortion"></span> <input type="number" id="waterPortionMl" min="50" max="1000" step="50"> ml</label>
+      <label><span data-i18n="workHours"></span> <input type="number" id="workHours" min="1" max="16" step="1"> h</label>
+    </div>
+    <label class="row">
+      <input type="checkbox" id="breaks">
+      <span>
+        <strong data-i18n="breaks"></strong>
+        <small data-i18n="breaksInfo"></small>
+      </span>
+    </label>
+    <div class="numbers">
+      <label><span data-i18n="breakEvery"></span> <input type="number" id="breakEveryMin" min="15" max="240" step="5"> min</label>
+      <label><span data-i18n="breakLength"></span> <input type="number" id="breakLengthMin" min="1" max="60" step="1"> min</label>
+    </div>
+    <label class="row">
+      <input type="checkbox" id="eyes">
+      <span>
+        <strong data-i18n="eyes"></strong>
+        <small data-i18n="eyesInfo"></small>
+      </span>
+    </label>
+    <label class="row">
+      <input type="checkbox" id="reminderSound">
+      <span>
+        <strong data-i18n="reminderSound"></strong>
+        <small data-i18n="reminderSoundInfo"></small>
+      </span>
+    </label>
+    <div class="numbers">
+      <button type="button" class="small" id="test-water" data-i18n="testWater"></button>
+      <button type="button" class="small" id="test-break" data-i18n="testBreak"></button>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-i18n="codingTitle"></h2>
+    <label class="row">
+      <input type="checkbox" id="claudeStatus">
+      <span>
+        <strong data-i18n="claudeStatus"></strong>
+        <small data-i18n="claudeStatusInfo"></small>
+      </span>
+    </label>
+    <div class="numbers">
+      <label><span data-i18n="focusLength"></span> <input type="number" id="focusMin" min="5" max="120" step="5"> min</label>
+    </div>
+    <label class="row">
+      <input type="checkbox" id="commitRemind">
+      <span>
+        <strong data-i18n="commitRemind"></strong>
+        <small data-i18n="commitInfo"></small>
+      </span>
+    </label>
+    <div class="numbers">
+      <label><span data-i18n="commitAfter"></span> <input type="number" id="commitAfterMin" min="10" max="480" step="10"> min</label>
+    </div>
+    <div class="folder">
+      <code id="gitFolder"></code>
+      <button type="button" id="pick-folder" data-i18n="pickFolder"></button>
+      <button type="button" id="clear-folder" class="ghost" data-i18n="clearFolder"></button>
+    </div>
+    <p id="folder-status" class="status" role="status"></p>
+  </section>
+
+  <section id="prompts">
+    <h2 data-i18n="promptsTitle"></h2>
+    <p class="muted" data-i18n="promptsInfo"></p>
+    <ul id="prompt-list" class="feeds"></ul>
+    <p id="no-prompts" class="muted" data-i18n="noPrompts"></p>
+    <form id="add-prompt" class="add prompt-form">
+      <input id="prompt-label" type="text" maxlength="40" data-i18n-placeholder="promptLabel" required>
+      <textarea id="prompt-text" rows="3" maxlength="4000" data-i18n-placeholder="promptText" required></textarea>
+      <button type="submit" data-i18n="addPrompt"></button>
+    </form>
+    <p id="prompt-status" class="status" role="status"></p>
+  </section>
+
+  <section>
+    <h2 data-i18n="builtinTitle"></h2>
+    <ul id="builtin" class="feeds"></ul>
+  </section>
+
+  <section>
+    <h2 data-i18n="customTitle"></h2>
+    <ul id="custom" class="feeds"></ul>
+    <p id="no-custom" class="muted" data-i18n="noCustom"></p>
+
+    <form id="add" class="add">
+      <input id="add-name" type="text" maxlength="40" data-i18n-placeholder="namePlaceholder">
+      <input id="add-url" type="url" placeholder="https://…/feed/" required>
+      <label class="inline"><input id="add-alert" type="checkbox"> <span data-i18n="importantEvery"></span></label>
+      <button type="submit" id="add-btn" data-i18n="add"></button>
+    </form>
+    <p id="status" class="status" role="status"></p>
+  </section>
+
+  <footer class="muted">
+    <p><span data-i18n="savedIn"></span> <code id="file"></code></p>
+    <p data-i18n="trademark"></p>
+  </footer>
+
+  <script src="settings.js"></script>
+</body>
+</html>

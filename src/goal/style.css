@@ -1,0 +1,46 @@
+/* Okienko „Cel dnia” w kolorach Black Lily Labs */
+:root {
+  --gold: #C8892A;
+  --plum: #3B2230;
+  --cream: #F5EBDD;
+  --line: rgba(59, 34, 48, .15);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 20px 22px;
+  background: var(--cream);
+  color: var(--plum);
+  font: 14px/1.45 "Segoe UI", "Segoe UI Emoji", sans-serif;
+}
+
+h1 { margin: 0 0 4px; font-size: 20px; }
+.muted { margin: 0 0 14px; color: rgba(59, 34, 48, .7); font-size: 13px; }
+
+input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--plum);
+  font: inherit;
+}
+input:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
+
+.buttons { display: flex; gap: 8px; margin-top: 14px; }
+button {
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--plum);
+  color: var(--cream);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+button:hover { background: #55334a; }
+button.ghost { background: transparent; color: var(--plum); }
+button.ghost:hover { background: rgba(59, 34, 48, .08); }

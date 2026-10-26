@@ -1,0 +1,210 @@
+/* Kolory Black Lily Labs */
+:root {
+  --gold: #C8892A;
+  --plum: #3B2230;
+  --cream: #F5EBDD;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+  user-select: none;
+  font-family: "Segoe UI", "Segoe UI Emoji", sans-serif;
+}
+
+/* Wszystko pozycjonujemy z JS przez transform. */
+.pet, .bubble, .laptop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+}
+
+.pet {
+  width: 108px;              /* 12 jednostek × 9 px (PX w pet.js) */
+  height: 108px;
+  cursor: pointer;
+  transform-origin: center;
+  transition: opacity 1.2s ease, filter 1.2s ease;
+}
+/* Peleryna niewidka: ludzik powoli znika */
+.pet.vanished { opacity: 0; filter: blur(2px); }
+
+.sprite {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;         /* rekwizyty (słuchawki, deskorolka, cień) wystają poza ludzika */
+  filter: drop-shadow(0 2px 1px rgba(0, 0, 0, .25));
+}
+.pet.hop .sprite { animation: hop .45s ease-out; }
+@keyframes hop { 40% { transform: translateY(-28px); } }
+
+.laptop {
+  width: 81px;               /* 9 × 9 px (rozmiar ustawia też pet.js) */
+  height: 54px;
+  shape-rendering: crispEdges;
+  display: none;
+  filter: drop-shadow(0 2px 1px rgba(0, 0, 0, .25));
+}
+.laptop.on { display: block; animation: pop .2s ease-out; }
+
+.rope {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+.rope path, .rope ellipse, .rope circle {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+/* Dymek */
+.bubble {
+  display: none;
+  width: max-content;
+  max-width: 260px;
+  padding: 7px 12px;
+  background: var(--cream);
+  color: var(--plum);
+  border: 2px solid var(--gold);
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.35;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .25);
+  pointer-events: none;
+  --tail: 50%;
+}
+.bubble.on { display: block; animation: pop .25s ease-out; }
+.bubble.has-link { cursor: pointer; pointer-events: auto; }
+.bubble::after {
+  content: "";
+  position: absolute;
+  left: var(--tail);
+  bottom: -8px;
+  margin-left: -7px;
+  border: 7px solid transparent;
+  border-bottom: 0;
+  border-top-color: var(--gold);
+}
+.bubble.below::after {
+  bottom: auto;
+  top: -8px;
+  border-top: 0;
+  border-bottom: 7px solid var(--gold);
+}
+.bubble-hint {
+  display: none;
+  margin-top: 3px;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--gold);
+}
+.bubble.has-link .bubble-hint { display: block; }
+
+/* Ważny alert z RSS (czerwony) i intro (złote): nagłówek i przycisk ✕ */
+.bubble-title, .bubble-close { display: none; }
+.bubble.alert, .bubble.intro {
+  --accent: var(--gold);
+  max-width: 300px;
+  padding-right: 26px;
+}
+.bubble.alert {
+  --accent: #C0392B;
+  border-color: var(--accent);
+}
+.bubble.intro { cursor: pointer; pointer-events: auto; } /* klik = kolejny dymek */
+.bubble.intro .bubble-hint { display: block; }
+.bubble.alert::after { border-top-color: var(--accent); }
+.bubble.alert.below::after { border-bottom-color: var(--accent); }
+.bubble.alert .bubble-title, .bubble.intro .bubble-title {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.bubble.alert .bubble-close, .bubble.intro .bubble-close {
+  display: block;
+  position: absolute;
+  top: 4px;
+  right: 5px;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--plum);
+  font-size: 11px;
+  line-height: 18px;
+  cursor: pointer;
+}
+.bubble .bubble-close:hover { background: rgba(59, 34, 48, .12); }
+@keyframes pop { from { opacity: 0; } }
+
+/* Nutki przy słuchaniu muzyki */
+.notes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  color: var(--gold);
+  font-size: 24px;
+  pointer-events: none;
+}
+.notes.on { display: block; }
+.notes span { display: inline-block; animation: float 1.2s ease-in-out infinite; }
+.notes span:nth-child(2) { animation-delay: .3s; font-size: 30px; }
+.notes span:nth-child(3) { animation-delay: .6s; }
+
+@keyframes float { 50% { transform: translateY(-5px); opacity: .6; } }
+
+/* „ZZz” przy spaniu w przerwie: literki po kolei wylatują ukośnie w górę i znikają */
+.zzz {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 70px;
+  height: 70px;
+  color: var(--plum);
+  font-weight: 900;
+  font-family: "Segoe UI", sans-serif;
+  text-shadow: 0 0 3px var(--cream), 0 0 6px var(--cream);
+  pointer-events: none;
+}
+.zzz.on { display: block; }
+.zzz span {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+  animation: snore 2.4s ease-out infinite;
+}
+.zzz span:nth-child(1) { font-size: 16px; }
+.zzz span:nth-child(2) { font-size: 22px; animation-delay: .8s; }
+.zzz span:nth-child(3) { font-size: 28px; animation-delay: 1.6s; }
+@keyframes snore {
+  0% { opacity: 0; transform: translate(0, 0); }
+  20% { opacity: 1; }
+  100% { opacity: 0; transform: translate(34px, -46px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pet.hop .sprite, .notes span, .bubble.on, .laptop.on { animation: none; }
+  .zzz span { animation: none; opacity: 1; }
+  .zzz span:nth-child(2) { transform: translate(14px, -18px); }
+  .zzz span:nth-child(3) { transform: translate(30px, -38px); }
+}

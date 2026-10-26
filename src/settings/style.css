@@ -1,0 +1,149 @@
+/* Okno ustawień w kolorach Black Lily Labs */
+:root {
+  --gold: #C8892A;
+  --plum: #3B2230;
+  --cream: #F5EBDD;
+  --red: #C0392B;
+  --line: rgba(59, 34, 48, .15);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 24px 28px;
+  background: var(--cream);
+  color: var(--plum);
+  font: 14px/1.45 "Segoe UI", sans-serif;
+}
+
+header h1 { margin: 0; font-size: 24px; }
+h2 {
+  margin: 0 0 10px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--gold);
+}
+section { padding: 18px 0; border-top: 1px solid var(--line); }
+header { padding-bottom: 14px; }
+.muted { color: rgba(59, 34, 48, .65); margin: 4px 0 0; }
+small { display: block; color: rgba(59, 34, 48, .7); }
+
+.row { display: flex; gap: 10px; align-items: flex-start; padding: 6px 0; cursor: pointer; }
+.row input { margin-top: 3px; }
+input[type="checkbox"] { accent-color: var(--gold); width: 16px; height: 16px; }
+
+.feeds { list-style: none; margin: 0; padding: 0; }
+.feeds li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.feeds .name { font-weight: 600; }
+.feeds a { color: rgba(59, 34, 48, .6); font-size: 12px; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.feeds a:hover { color: var(--gold); text-decoration: underline; }
+.feeds .info { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.badge {
+  padding: 1px 7px;
+  border-radius: 10px;
+  background: var(--red);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+}
+.inline { display: flex; gap: 6px; align-items: center; font-size: 12px; white-space: nowrap; cursor: pointer; }
+
+.add { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 14px; }
+.add input[type="text"], .add input[type="url"] {
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--plum);
+  font: inherit;
+}
+.add input:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
+
+button {
+  padding: 8px 14px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--plum);
+  color: var(--cream);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+button:hover { background: #55334a; }
+button:disabled { opacity: .6; cursor: progress; }
+button.small { padding: 4px 10px; font-size: 12px; }
+button.ghost { background: transparent; color: var(--red); padding: 4px 8px; }
+button.ghost:hover { background: rgba(192, 57, 43, .1); }
+
+.numbers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin: 2px 0 10px 26px;
+  font-size: 13px;
+}
+.numbers input {
+  width: 74px;
+  padding: 4px 6px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--plum);
+  font: inherit;
+}
+
+.prompt-form { grid-template-columns: 1fr; }
+.prompt-form textarea {
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--plum);
+  font: inherit;
+  resize: vertical;
+}
+.prompt-form textarea:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
+.prompt-form button { justify-self: start; }
+.feeds .preview { color: rgba(59, 34, 48, .6); font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.folder {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 26px;
+}
+.folder code {
+  flex: 1;
+  min-width: 0;
+  padding: 6px 8px;
+  border: 1px dashed var(--line);
+  border-radius: 6px;
+  background: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+select {
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--plum);
+  font: inherit;
+}
+
+.status { min-height: 1.4em; margin: 8px 0 0; font-weight: 600; }
+.status.ok { color: #2E7D4F; }
+.status.err { color: var(--red); }
+
+footer { padding-top: 14px; border-top: 1px solid var(--line); font-size: 12px; }
+code { font-size: 11px; word-break: break-all; }

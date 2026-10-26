@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'">
+  <title>LilyAssist</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <svg id="rope" class="rope"></svg>
+  <svg id="laptop" class="laptop"></svg>
+  <div id="pet" class="pet" title="Kliknij, a otworzę Claude">
+    <svg id="sprite" class="sprite"></svg>
+  </div>
+  <div id="notes" class="notes"><span>♪</span><span>♫</span><span>♪</span></div>
+  <div id="zzz" class="zzz"><span>Z</span><span>Z</span><span>z</span></div>
+  <div id="bubble" class="bubble">
+    <button id="bubble-close" class="bubble-close" title="Zamknij">✕</button>
+    <div id="bubble-title" class="bubble-title"></div>
+    <div id="bubble-text"></div>
+    <div id="bubble-hint" class="bubble-hint"></div>
+  </div>
+  <script src="../messages.js"></script>
+  <script src="../sprite.js"></script>
+  <script src="pet.js"></script>
+</body>
+</html>

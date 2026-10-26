@@ -1,0 +1,4 @@
+node_modules/
+dist/
+# ikonę tworzy scripts/make-icon.js przy każdym „npm.cmd run dist”
+build/
